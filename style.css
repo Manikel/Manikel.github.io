@@ -28,7 +28,7 @@ header.hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background: var(--black);
   padding: 0 6rem;
   position: relative;
