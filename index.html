@@ -5,23 +5,28 @@
   <title>Mani Kelidari | Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <!-- AOS Animation Library -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
-  <header class="hero" data-aos="fade-down">
+  <header class="hero">
     <div class="hero-inner">
       <div class="profile-pic-container">
         <img src="https://avatars.githubusercontent.com/u/73826332?v=4" alt="Mani Kelidari" class="profile-pic" />
       </div>
       <div class="hero-texts">
-        <h1 class="big-intro">Hi, I'm Mani <span class="wave">👋</span></h1>
+        <h1 class="big-intro">Hi, I'm Mani 👋</h1>
+        <p class="hero-description">
+          A passionate high school student exploring the endless possibilities of technology. 
+          I create, code, and dream in pixels and algorithms.
+        </p>
       </div>
+    </div>
+    <div class="scroll-indicator">
+      Scroll to explore
     </div>
   </header>
 
   <main>
-    <section class="section" data-aos="fade-up" data-aos-delay="100">
+    <section class="section">
       <h2>About Me</h2>
       <p>
         Hey! I'm Mani Kelidari, a high school student who lives and breathes computers. Whether it's making Roblox scripts, tinkering with code, or designing on the web, I'm always exploring new tech and creative ideas.
@@ -31,7 +36,7 @@
       </p>
     </section>
 
-    <section class="section" data-aos="fade-up" data-aos-delay="200">
+    <section class="section">
       <h2>Projects</h2>
       <ul class="projects-list">
         <li><a href="https://github.com/Manikel/Manikel" target="_blank">Personal Portfolio</a></li>
@@ -41,7 +46,7 @@
       </ul>
     </section>
 
-    <section class="section" data-aos="fade-up" data-aos-delay="300">
+    <section class="section">
       <h2>Skills</h2>
       <ul class="skills-list">
         <li>Web Development (HTML, CSS, JS)</li>
@@ -53,7 +58,7 @@
       </ul>
     </section>
 
-    <section class="section" data-aos="fade-up" data-aos-delay="400">
+    <section class="section">
       <h2>Contact</h2>
       <ul class="contact-list">
         <li>Email: <a href="mailto:manikelidari@gmail.com">manikelidari@gmail.com</a></li>
@@ -62,23 +67,40 @@
       </ul>
     </section>
 
-    <section class="section" data-aos="fade-up" data-aos-delay="500">
+    <section class="section">
       <h2>Fun Fact</h2>
       <p>
-        I love black and purple aesthetics, and I can never resist a cool animation effect.
+        I love minimalist aesthetics and the subtle beauty of well-crafted interfaces. 
+        There's something magical about creating experiences that feel effortless yet meaningful.
       </p>
     </section>
   </main>
 
-  <footer class="footer" data-aos="fade-in" data-aos-delay="700">
+  <footer class="footer">
     <p>© 2025 Mani Kelidari</p>
   </footer>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
   <script>
-    AOS.init({
-      once: true, // animation occurs only once per section
-      duration: 900,
-      offset: 80,
+    // Smooth scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        observer.observe(section);
+      });
     });
   </script>
 </body>
