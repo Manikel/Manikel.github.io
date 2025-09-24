@@ -2,77 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mani's Portfolio</title>
+  <title>Mani Kelidari | Portfolio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <header>
-    <div class="profile-img-container">
-      <img src="https://avatars.githubusercontent.com/Manikel?v=4" alt="Mani's Profile Picture" class="profile-img">
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="profile-pic-container">
+        <img src="profile.jpg" alt="Mani Kelidari" class="profile-pic" />
+      </div>
+      <div class="hero-texts">
+        <h1 class="big-intro">Hi, I'm Mani <span class="wave">👋</span></h1>
+        <div class="stats-container">
+          <div class="stat fade-in delay-1">
+            <span class="stat-label">Location:</span>
+            <span class="stat-value">Washington, United States</span>
+          </div>
+          <div class="stat fade-in delay-2">
+            <span class="stat-label">GitHub Repos:</span>
+            <span class="stat-value">3</span>
+          </div>
+          <div class="stat fade-in delay-3">
+            <span class="stat-label">Gists:</span>
+            <span class="stat-value">0</span>
+          </div>
+          <div class="stat fade-in delay-4">
+            <span class="stat-label">Bio:</span>
+            <span class="stat-value">High school student passionate about Computer Science</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <h1>Hi, I'm Mani 👋</h1>
-    <p>High school student passionate about <span class="highlight">software engineering</span> and building cool projects.</p>
-    <a href="#contact" class="cta-btn">Contact Me</a>
   </header>
 
   <main>
-    <section id="about">
-      <h2>👨‍💻 About Me</h2>
+    <section class="about fade-in-section">
+      <h2>About Me</h2>
       <p>
-        I'm a self-motivated learner who enjoys turning ideas into reality with code.
-        I love working with <strong>JavaScript</strong>, <strong>Python</strong>, and <strong>C#</strong>.
-        Aside from coding, I enjoy <span class="highlight">competitive programming</span> and collaborating with others on open source projects.
+        I'm Mani Kelidari, a high school student and aspiring computer scientist. I love building things, exploring code, and bringing ideas to life!
       </p>
     </section>
 
-    <section id="projects">
-      <h2>🚀 Projects</h2>
+    <section class="projects fade-in-section">
+      <h2>Projects</h2>
       <ul>
         <li>
-          <a href="https://github.com/Manikel/roblox-discord-presence">
-            Roblox Discord Presence
-          </a>
-          <span class="project-desc">– A rich presence integration for Roblox and Discord.</span>
+          <a href="https://github.com/Manikel/Manikel.github.io" target="_blank">My Portfolio Website</a>
+          <span class="project-desc">This site! Built with HTML, CSS, and love. A showcase of my work and skills.</span>
         </li>
         <li>
-          <a href="https://github.com/Manikel/Manikel.github.io">
-            Personal Website
-          </a>
-          <span class="project-desc">– My portfolio and blog built with HTML, CSS, and JavaScript.</span>
-        </li>
-        <li>
-          <a href="https://github.com/Manikel/Manikel">
-            Manikel Profile
-          </a>
-          <span class="project-desc">– My GitHub profile README with fun facts and stats.</span>
+          <a href="https://github.com/Manikel/roblox-discord-presence" target="_blank">Roblox Discord Presence</a>
+          <span class="project-desc">A tool that displays your Roblox status on Discord using rich presence.</span>
         </li>
       </ul>
     </section>
 
-    <section id="skills">
-      <h2>🛠 Skills</h2>
+    <section class="skills fade-in-section">
+      <h2>Skills</h2>
       <div class="skills-list">
-        <span>JavaScript</span>
-        <span>Python</span>
-        <span>C#</span>
         <span>HTML</span>
         <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
         <span>Git</span>
-        <span>Linux</span>
+        <span>Web Design</span>
       </div>
     </section>
 
-    <section id="contact">
-      <h2>📫 Contact</h2>
-      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-      <p>GitHub: <a href="https://github.com/Manikel">github.com/Manikel</a></p>
+    <section class="contact fade-in-section" id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/Manikel" target="_blank">@Manikel</a></p>
     </section>
   </main>
-
   <footer>
-    <p>© 2025 Mani. Made with ♥ and lots of coffee.</p>
+    &copy; 2025 Mani Kelidari. All rights reserved.
   </footer>
+  <script>
+    // Fade-in on scroll for all sections
+    const fadeSections = document.querySelectorAll('.fade-in-section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {threshold: 0.15});
+    fadeSections.forEach(sec => observer.observe(sec));
+  </script>
 </body>
 </html>
