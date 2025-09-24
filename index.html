@@ -5,9 +5,11 @@
   <title>Mani Kelidari | Portfolio</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" data-aos="fade-down">
     <div class="hero-inner">
       <div class="profile-pic-container">
         <img src="https://avatars.githubusercontent.com/u/73826332?v=4" alt="Mani Kelidari" class="profile-pic" />
@@ -15,19 +17,11 @@
       <div class="hero-texts">
         <h1 class="big-intro">Hi, I'm Mani <span class="wave">👋</span></h1>
         <div class="stats-container">
-          <div class="stat fade-in delay-1">
+          <div class="stat">
             <span class="stat-label">Location:</span>
             <span class="stat-value">Washington, United States</span>
           </div>
-          <div class="stat fade-in delay-2">
-            <span class="stat-label">GitHub Repos:</span>
-            <span class="stat-value">3</span>
-          </div>
-          <div class="stat fade-in delay-3">
-            <span class="stat-label">Gists:</span>
-            <span class="stat-value">0</span>
-          </div>
-          <div class="stat fade-in delay-4">
+          <div class="stat">
             <span class="stat-label">Bio:</span>
             <span class="stat-value">High school student passionate about Computer Science</span>
           </div>
@@ -37,82 +31,44 @@
   </header>
 
   <main>
-    <!-- NEW: Bio Section -->
-    <section class="bio fade-in-section">
-      <h2>Bio</h2>
+    <section class="section" data-aos="fade-up" data-aos-delay="100">
+      <h2>About Me</h2>
       <p>
-        Hey! I'm Mani Kelidari, a high school student who lives and breathes computers. Whether it's making Roblox scripts, tinkering with code, or designing on the web, I'm always exploring new tech and creative ideas.<br><br>
+        Hey! I'm Mani Kelidari, a high school student who lives and breathes computers. Whether it's making Roblox scripts, tinkering with code, or designing on the web, I'm always exploring new tech and creative ideas.
+      </p>
+      <p>
         When I'm not coding, I'm probably gaming, going down Wikipedia rabbit holes, or brainstorming my next project. My goal? To learn as much as I can, build things people enjoy, and have fun doing it!
       </p>
     </section>
-    <!-- END Bio -->
 
-    <!-- NEW: README-style Quick Intro/FAQ Section -->
-    <section class="readme fade-in-section">
-      <h2>README</h2>
+    <section class="section" data-aos="fade-up" data-aos-delay="250">
+      <h2>What I Do</h2>
       <ul>
-        <li><strong>💡 What do I do?</strong> <br> I build websites, bot scripts, and random experiments. I also contribute to open source when I can.</li>
-        <li><strong>🔭 What am I working on?</strong> <br> New web projects, Roblox automation, and improving my UI/UX skills.</li>
-        <li><strong>🌱 What am I learning?</strong> <br> Advanced JavaScript, backend stuff, and Python for automation.</li>
-        <li><strong>📫 How to contact me?</strong> <br> Email or GitHub, both are linked below!</li>
-        <li><strong>😄 Fun fact:</strong> <br> I love purple and black aesthetics, and I can never resist a cool animation effect.</li>
+        <li>✨ Build websites, bot scripts, and random experiments</li>
+        <li>🔍 Currently working on: web projects, Roblox automation, and UI/UX skills</li>
+        <li>🌱 Learning: Advanced JavaScript, backend, and Python automation</li>
+        <li>📫 Contact: <a href="mailto:manikelidari@gmail.com">Email</a> or <a href="https://github.com/Manikel">GitHub</a></li>
       </ul>
     </section>
-    <!-- END README -->
 
-    <section class="about fade-in-section">
-      <h2>About Me</h2>
+    <section class="section" data-aos="fade-up" data-aos-delay="400">
+      <h2>Fun Fact</h2>
       <p>
-        I'm Mani Kelidari, a high school student and aspiring computer scientist. I love building things, exploring code, and bringing ideas to life!
+        I love purple and black aesthetics, and I can never resist a cool animation effect.
       </p>
     </section>
-
-    <section class="projects fade-in-section">
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <a href="https://github.com/Manikel/Manikel.github.io" target="_blank">My Portfolio Website</a>
-          <span class="project-desc">This site! Built with HTML, CSS, and love. A showcase of my work and skills.</span>
-        </li>
-        <li>
-          <a href="https://github.com/Manikel/roblox-discord-presence" target="_blank">Roblox Discord Presence</a>
-          <span class="project-desc">A tool that displays your Roblox status on Discord using rich presence.</span>
-        </li>
-      </ul>
-    </section>
-
-    <section class="skills fade-in-section">
-      <h2>Skills</h2>
-      <div class="skills-list">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Python</span>
-        <span>Git</span>
-        <span>Web Design</span>
-      </div>
-    </section>
-
-    <section class="contact fade-in-section" id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/Manikel" target="_blank">@Manikel</a></p>
-    </section>
   </main>
-  <footer>
-    &copy; 2025 Mani Kelidari. All rights reserved.
+
+  <footer class="footer" data-aos="fade-in" data-aos-delay="700">
+    <p>© 2025 Mani Kelidari</p>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    // Fade-in on scroll for all sections
-    const fadeSections = document.querySelectorAll('.fade-in-section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {threshold: 0.15});
-    fadeSections.forEach(sec => observer.observe(sec));
+    AOS.init({
+      once: true, // animation occurs only once per section
+      duration: 900,
+      offset: 80,
+    });
   </script>
 </body>
 </html>
